@@ -4,22 +4,21 @@ sudo pacman -Syu
 sudo pacman -S manjaro-keyring
 sudo pacman -Suu
 
-# Base develop packages
-# sudo pacman -S git
-# sudo pacman -S binutils make gcc fakeroot --noconfirm --needed
-
-# Install
+# install general stuff
+sudo pacman -S vlc git python3-pip docker docker-compose
 
 
-# Codecs and other media stuff
-# sudo pacman -S
+# Install Yay
+# git clone https://aur.archlinux.org/yay.git
+# cd yay
+# makepkg -si
 
 # Browsers
-# yaourt -Syu
-# yaourt -S google-chrome
-# yaourt -S firefox-beta-bin
+# yay -Syu
+# yay -S google-chrome
+# yay -S firefox-beta-bin
 
 # Editors
 # echo "Installing Sublime and VS Code"
-# yaourt -S sublime-text-dev
-# yaourt -S visual-studio-code
+# yay -S sublime-text-dev
+# yay -S visual-studio-code
