@@ -4,23 +4,26 @@ sudo pacman -Syu
 sudo pacman -S manjaro-keyring
 sudo pacman -Suu
 
-# install general stuff
-sudo pacman -S git terminator
-sudo pacman -S vlc python3-pip docker docker-compose
+# Install general stuff
+echo "installing general packages"
+sudo pacman -S terminator firefox
+sudo pacman -S vlc 
 
+# Install dev stuff
+echo "installing dev packages"
+sudo pacman -S docker docker-compose
+sudo pacman -S git code
 
 # Install Yay
+echo "Installing yay"
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 cd ..
 
-# Browsers
-# yay -Syu
-# yay -S google-chrome
-# yay -S firefox-beta-bin
-
-# Editors
-# echo "Installing Sublime and VS Code"
-# yay -S sublime-text-dev
-# yay -S visual-studio-code
+# Installing general yay packages
+echo "Installing editors"
+yay -S sublime-text-dev
+echo "Installing messaging apps"
+yay -S discord
+yay -S slack-desktop
