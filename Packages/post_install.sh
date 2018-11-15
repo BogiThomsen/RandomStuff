@@ -6,7 +6,7 @@ sudo pacman -Suu
 
 # Install general stuff
 echo "installing general packages"
-sudo pacman -S terminator firefox
+sudo pacman -S terminator
 sudo pacman -S vlc conky
 
 # Install dev stuff
