@@ -15,15 +15,11 @@ sudo pacman -S docker docker-compose
 sudo pacman -S git code
 
 # Install Yay
-echo "Installing yay"
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
+echo "Installing yaourt"
+sudo pacman -S yaourt
+yaourt -Syu
 
 # Installing general yay packages
-echo "Installing editors"
-yay -S sublime-text-dev
-echo "Installing messaging apps"
-yay -S discord
-yay -S slack-desktop
+yaourt -S sublime-text-dev
+yaourt -S discord
+yaourt -S slack-desktop
