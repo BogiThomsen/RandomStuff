@@ -5,13 +5,15 @@ sudo pacman -S manjaro-keyring
 sudo pacman -Suu
 
 # install general stuff
-sudo pacman -S vlc git python3-pip docker docker-compose
+sudo pacman -S git terminator
+sudo pacman -S vlc python3-pip docker docker-compose
 
 
 # Install Yay
-# git clone https://aur.archlinux.org/yay.git
-# cd yay
-# makepkg -si
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
 
 # Browsers
 # yay -Syu
