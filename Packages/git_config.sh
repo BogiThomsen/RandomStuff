@@ -1,3 +1,4 @@
+#!/bin/bash
 ## Set vars ##
 EMAIL="email@gmail.com"
 AUTHOR="Bogi Thomsen"
