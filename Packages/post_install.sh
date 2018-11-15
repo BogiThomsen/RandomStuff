@@ -27,3 +27,11 @@ sudo pacman -S exfat-utils fuse-exfat a52dec faac faad2 flac jasper \
   dvdauthor dvgrab
 
 # Browsers
+# yaourt -Syu
+# yaourt -S google-chrome
+# yaourt -S firefox-beta-bin
+
+# Editors
+# echo "Installing Sublime and VS Code"
+# yaourt -S sublime-text-dev
+# yaourt -S visual-studio-code
