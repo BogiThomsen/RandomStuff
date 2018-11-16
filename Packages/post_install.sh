@@ -40,9 +40,9 @@ AUTHOR="Bogi Thomsen"
 
 ## Set name and emails
 git config --global user.name $AUTHOR
-git config --global user.email $NAME
+git config --global user.email $EMAIL
 
-ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/id_rsa
+ssh-keygen -t rsa -b 4096 -C "$EMAIL"
 
 echo "------------------------------------"
 echo "-------- Install finished ----------"
