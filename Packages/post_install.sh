@@ -1,25 +1,58 @@
 #!/bin/bash
+if [ "`id -u`" != "0" ]; then
+    echo "Must be run as root"
+    exit 1
+fi
+echo "------------------------------------"
+echo "----------Updating mirrors----------"
+echo "------------------------------------"
+pacman-mirrors -g &&
+
+echo "------------------------------------"
+echo "---------Updating packages----------"
+echo "------------------------------------"
+pacman -Syyuu --noconfirm &&
+
 # Update pacman and install keyring to avoid signature problems
-sudo pacman -Syu
-sudo pacman -S manjaro-keyring
-sudo pacman -Suu
+pacman -S manjaro-keyring --noconfirm --needed
+pacman -Suu --noconfirm
 
 # Install general stuff
-echo "installing general packages"
-sudo pacman -S terminator
-sudo pacman -S vlc conky
+echo "------------------------------------"
+echo "--------Installing packages---------"
+echo "------------------------------------"
+pacman -S --noconfirm --needed \
+    terminator conky docker docker-compose \
+    git code virtualbox wine yaourt
+    
+pacman -Syyuu --noconfirm
+if [ $? != 0 ]; then
+    echo ""
+    echo "ERROR running pacman -- must check if all packages are available"
+    exit 1
+fi
+               
+echo "------------------------------------"
+echo "----------Configuring git-----------"
+echo "------------------------------------"
+## Set vars
+EMAIL="email@gmail.com"
+AUTHOR="Bogi Thomsen"
 
-# Install dev stuff
-echo "installing dev packages"
-sudo pacman -S docker docker-compose
-sudo pacman -S git code
+## Set name and emails
+git config --global user.name $AUTHOR
+git config --global user.email $NAME
 
-# Install Yay
-echo "Installing yaourt"
-sudo pacman -S yaourt
-yaourt -Syu
+ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/id_rsa
 
-# Installing general yay packages
-yaourt -S sublime-text-dev
-yaourt -S discord
-yaourt -S slack-desktop
+echo "------------------------------------"
+echo "------Installing AUR packages-------"
+echo "------------------------------------"
+yaourt -S --noconfirm --needed \
+  sublime-text-dev slack-desktop discord
+  
+if [ $? != 0 ]; then
+  echo ""
+  echo "ERROR running yaourt -- must check if all packages are available"
+  exit 1
+fi
