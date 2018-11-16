@@ -9,7 +9,7 @@ echo "------------------------------------"
 echo "----- Installing AUR packages ------"
 echo "------------------------------------"
 yaourt -S --noconfirm --needed \
-  spotify sublime-text-dev slack-desktop discord
+  spotify pencil sublime-text-dev slack-desktop discord
   
 if [ $? != 0 ]; then
   echo ""
