@@ -2,6 +2,8 @@ echo "------------------------------------"
 echo "-------- Creating folders ----------"
 echo "------------------------------------"
 ## Create folders
+mkdir Repos
+cd Repos
 mkdir Personal
 mkdir Work
 mkdir Uni
