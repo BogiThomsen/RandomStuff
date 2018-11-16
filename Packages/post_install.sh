@@ -25,7 +25,6 @@ pacman -S --noconfirm --needed \
     terminator conky docker docker-compose \
     git code virtualbox wine yaourt
     
-pacman -Syyuu --noconfirm
 if [ $? != 0 ]; then
     echo ""
     echo "ERROR running pacman -- must check if all packages are available"
@@ -46,10 +45,15 @@ git config --global user.email $NAME
 ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/id_rsa
 
 echo "------------------------------------"
+echo "-------Updating AUR packages--------"
+echo "------------------------------------"
+yaourt -Syu --noconfirm
+
+echo "------------------------------------"
 echo "------Installing AUR packages-------"
 echo "------------------------------------"
 yaourt -S --noconfirm --needed \
-  sublime-text-dev slack-desktop discord
+  spotify sublime-text-dev slack-desktop discord
   
 if [ $? != 0 ]; then
   echo ""
