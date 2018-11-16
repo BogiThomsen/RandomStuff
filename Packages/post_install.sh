@@ -44,29 +44,6 @@ git config --global user.email $NAME
 
 ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/id_rsa
 
-
-echo "------------------------------------"
-echo "-------- Creating folders ----------"
-echo "------------------------------------"
-## Create folders
-mkdir Personal
-mkdir Work
-mkdir Uni
-
-
-echo "------------------------------------"
-echo "--------- Cloning repos ------------"
-echo "------------------------------------"
-## Clone personal repos
-cd Personal
-git clone git@github.com:BogiThomsen/RandomStuff.git
-cd ..
-
-## Clone uni repos
-cd Uni
-git clone git@github.com:BogiThomsen/NEMT.git
-cd ..
-
 echo "------------------------------------"
 echo "-------- Install finished ----------"
 echo "------------------------------------"
