@@ -4,12 +4,12 @@ if [ "`id -u`" != "0" ]; then
     exit 1
 fi
 echo "------------------------------------"
-echo "----------Updating mirrors----------"
+echo "--------- Updating mirrors ---------"
 echo "------------------------------------"
 pacman-mirrors -g &&
 
 echo "------------------------------------"
-echo "---------Updating packages----------"
+echo "-------- Updating packages ---------"
 echo "------------------------------------"
 pacman -Syyuu --noconfirm &&
 
@@ -19,7 +19,7 @@ pacman -Suu --noconfirm
 
 # Install general stuff
 echo "------------------------------------"
-echo "--------Installing packages---------"
+echo "------- Installing packages --------"
 echo "------------------------------------"
 pacman -S --noconfirm --needed \
     terminator conky docker docker-compose \
@@ -32,7 +32,7 @@ if [ $? != 0 ]; then
 fi
                
 echo "------------------------------------"
-echo "----------Configuring git-----------"
+echo "--------- Configuring git ----------"
 echo "------------------------------------"
 ## Set vars
 EMAIL="email@gmail.com"
@@ -44,21 +44,29 @@ git config --global user.email $NAME
 
 ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/id_rsa
 
-echo "------------------------------------"
-echo "-------Updating AUR packages--------"
-echo "------------------------------------"
-yaourt -Syu --noconfirm
-## Adding discord gpg key
-gpg --recv-keys 0FC3042E345AD05D
 
 echo "------------------------------------"
-echo "------Installing AUR packages-------"
+echo "-------- Creating folders ----------"
 echo "------------------------------------"
-yaourt -S --noconfirm --needed \
-  spotify sublime-text-dev slack-desktop discord
-  
-if [ $? != 0 ]; then
-  echo ""
-  echo "ERROR running yaourt -- must check if all packages are available"
-  exit 1
-fi
+## Create folders
+mkdir Personal
+mkdir Work
+mkdir Uni
+
+
+echo "------------------------------------"
+echo "--------- Cloning repos ------------"
+echo "------------------------------------"
+## Clone personal repos
+cd Personal
+git clone git@github.com:BogiThomsen/RandomStuff.git
+cd ..
+
+## Clone uni repos
+cd Uni
+git clone git@github.com:BogiThomsen/NEMT.git
+cd ..
+
+echo "------------------------------------"
+echo "-------- Install finished ----------"
+echo "------------------------------------"
