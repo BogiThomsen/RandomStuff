@@ -48,6 +48,8 @@ echo "------------------------------------"
 echo "-------Updating AUR packages--------"
 echo "------------------------------------"
 yaourt -Syu --noconfirm
+## Adding discord gpg key
+gpg --recv-keys 0FC3042E345AD05D
 
 echo "------------------------------------"
 echo "------Installing AUR packages-------"
