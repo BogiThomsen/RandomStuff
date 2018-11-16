@@ -1,0 +1,25 @@
+[global_config]
+[keybindings]
+  resize_down = <Shift><Alt>Down
+  resize_left = <Shift><Alt>Left
+  resize_right = <Shift><Alt>Right
+  resize_up = <Shift><Alt>Up
+  split_horiz = <Primary><Shift>Down
+  split_vert = <Primary><Shift>Right
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.6
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#f57900"
+    login_shell = True
+show_titlebar = False
