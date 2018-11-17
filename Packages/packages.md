@@ -1,20 +1,36 @@
-# ToDo
-make a package that installs packages
-`https://wiki.archlinux.org/index.php/Creating_packages`
+# Installs all nessecary packages
 
+## Packages:
+- terminator 
+- conky 
+- docker 
+- docker-compose 
+- git 
+- code 
+- virtualbox 
+- wine 
+- yaourt 
+- vibrancy-colors 
+- php 
+- ruby 
+- nodejs 
+- npm 
+- go 
+- postgresql 
+- mariadb
+- mongodb 
+- 13lock
+- spotify 
+- pencil 
+- sublime-text-dev 
+- google-chrome
+- slack-desktop 
+- discord 
+- gtk-theme-shades-of-gray
 
-## Packages 
+## Other scripts:
+Configures git.
+Clones all my repos.
 
-### General
-- a terminal
-- visual studio code
-- spotify
-- slack
-- firefox
-- something to make xfce prettier
-### Dev stuff
-- docker
-- docker-compose
-- git
-- python3-pip
-- ...probably more
+## Configs
+Will have my prefered settings for apps.
