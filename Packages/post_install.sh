@@ -23,7 +23,9 @@ echo "------- Installing packages --------"
 echo "------------------------------------"
 pacman -S --noconfirm --needed \
     terminator conky docker docker-compose \
-    git code virtualbox wine yaourt
+    git code virtualbox wine yaourt vibrancy-colors \
+    php ruby nodejs npm go postgresql mariadb \
+    mongodb 13lock 
     
 if [ $? != 0 ]; then
     echo ""

@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "------------------------------------"
 echo "-------- Creating folders ----------"
 echo "------------------------------------"
@@ -22,4 +23,9 @@ cd Uni
 mkdir Repos
 cd Repos
 git clone git@github.com:BogiThomsen/NEMT.git
-cd ../..
+cd ..
+mkdir aau-datsw
+cd aau-datsw
+for i in $(curl "https://api.github.com/orgs/aau-datsw/repos" | sed '/[ ]*"clone_url":/!d;s/[^:]*: "//;s/",$//'); do
+  echo git clone $i
+done

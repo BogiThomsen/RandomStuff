@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "------------------------------------"
 echo "------ Updating AUR packages -------"
 echo "------------------------------------"
@@ -9,7 +10,8 @@ echo "------------------------------------"
 echo "----- Installing AUR packages ------"
 echo "------------------------------------"
 yaourt -S --noconfirm --needed \
-  spotify pencil sublime-text-dev slack-desktop discord
+  spotify pencil sublime-text-dev google-chrome \
+  slack-desktop discord gtk-theme-shades-of-gray
   
 if [ $? != 0 ]; then
   echo ""
