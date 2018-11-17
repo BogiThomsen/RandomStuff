@@ -1,5 +1,6 @@
 [global_config]
 [keybindings]
+  layout_launcher = <Primary><Shift><Alt>F12
   resize_down = <Shift><Alt>Down
   resize_left = <Shift><Alt>Left
   resize_right = <Shift><Alt>Right
